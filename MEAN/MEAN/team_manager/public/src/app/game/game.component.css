@@ -1,0 +1,12 @@
+button.playing{
+   background-color: green;
+   color: white;
+}
+button.notplaying{
+   background-color: red;
+   color: white;
+}
+button.undecided{
+   background-color: yellow;
+   color: white;
+}

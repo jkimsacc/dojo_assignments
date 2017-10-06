@@ -1,0 +1,27 @@
+
+<body>
+   <form action="index.html" (submit)="calculate_power()">
+      <h2>Initial Power Level: <input type="number" name="initial" [(ngModel)]="fighter.power"><input type="submit" name="calculate" value="Calculate Powers"></h2>
+      {{ fighter | json }}
+   </form>
+   <section>
+      <div class="human">
+         <app-human [humanPower]="fighter.power" ></app-human>
+      </div>
+      <div class="saiyan">
+         <app-saiyan [saiyanPower]="fighter.power*10"></app-saiyan>
+      </div>
+      <div class="saiyan1">
+         <app-supersaiyan [spsaiyanPower]="fighter.power * 90"></app-supersaiyan>
+      </div>
+      <div class="saiyan2">
+         <app-supersaiyantwo [saiyanPower2]="fighter.power * 150"></app-supersaiyantwo>
+      </div>
+      <div class="saiyan3">
+         <app-supersaiyanthree [saiyanPower3]="fighter.power * 250"></app-supersaiyanthree>
+      </div>
+      <div class="saiyan4">
+         <app-supersaiyanfour [saiyanPower4]="fighter.power * 500"></app-supersaiyanfour>
+      </div>
+   </section>
+</body>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+  </head>
+  <body>
+    <section>
+      <h2>results</h2>
+      {% for type in pet_types %}
+        {{ type.pet.name }}
+      {% endfor %}
+    </section>
+  </body>
+</html>

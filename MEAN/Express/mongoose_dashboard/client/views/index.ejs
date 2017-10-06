@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animal</title>
+    <style media="screen">
+      section{width: 500px; margin: auto;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <form class="" action="/create" method="post">
+        <h2>Create Pack</h2>
+        <input type="text" name="name" value="">
+        <input type="submit" value="Create new Animal Pack">
+      </form>
+      <% for (idx in dogs) { %>
+      <h3><a href= <%= "/dogs/" + dogs[idx].id %> ><%= dogs[idx].name %></a></h3>
+      <% } %>
+    </section>
+
+
+  </body>
+</html>

@@ -1,0 +1,8 @@
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/bin/Debug/netcoreapp1.1/displaytime.deps.json
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/bin/Debug/netcoreapp1.1/displaytime.runtimeconfig.json
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/bin/Debug/netcoreapp1.1/displaytime.runtimeconfig.dev.json
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/bin/Debug/netcoreapp1.1/displaytime.dll
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/bin/Debug/netcoreapp1.1/displaytime.pdb
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/obj/Debug/netcoreapp1.1/displaytime.AssemblyInfo.cs
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/obj/Debug/netcoreapp1.1/displaytime.dll
+/Users/joseph/Desktop/projects/dojo/C#/asp_dotnet_core/displaytime/obj/Debug/netcoreapp1.1/displaytime.pdb

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+      $(document). ready(function (){
+        var socket  = io.connect();
+        $('#survey_form').submit(function (){
+          socket.emit( "submit_form", {
+            name : $('#name').val(),
+            location : $('#location').val(),
+            stack : $('#stack').val(),
+            comment : $('#comment').val(),
+            });
+          });
+          socket.on('server_response', function (data){
+            $('div.io').html("<p>submited info:" + JSON.stringify(data.response) + "</p><p>Number is: " + JSON.stringify(data.number) + "</p>");
+
+          });
+        })
+    </script>
+  </head>
+  <body>
+    <div class="io">
+
+    </div>
+    <div class="box">
+      <form class="" action="/register" method="post" onsubmit="return false" id="survey_form">
+        <p>Your Name: <input type="text" name="name" value="" id="name"></p>
+        <p>Dojo Location: <select class="" name="location" id="location">
+          <option value="Seattle">Seattle</option>
+          <option value="Mountain View">Silicon Vally</option>
+          <option value="Barbank">Los angeles</option>
+          <option value="Chicago">Chicago</option>
+        </select></p>
+        <p>Favorite Stack <select class="" name="stack" id="stack">
+          <option value="Web Fund">Web Fund</option>
+          <option value="Python">Python</option>
+          <option value="MEAN">MEAN</option>
+          <option value="C#">C#</option>
+          <option value="Java">Java</option>
+          <option value="ios">ios</option>
+        </select></p>
+        <p>Comment(optional):</p>
+        <textarea name="comment" rows="8" cols="80" id="comment"></textarea><br>
+        <input type="submit" id="submit" name="submit" value="Submit">
+      </form>
+
+    </div>
+  </body>
+</html>

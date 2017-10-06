@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends Page</title>
+    <style media="screen">
+    * {padding: 1% 1% 0 0; margin: 0 0 1% 1%;}
+    section {background-color: white;}
+    div {vertical-align: top; display: inline-block; width: 45%; border-style: solid; border-width: 1px;}
+    input {display: block;}
+    table, th, td {border-style: solid; border-width: 1px; border-collapse: collapse;}
+    th, td {width: 250px}
+    th {background: silver;}
+    table tr:nth-child(odd) {background: #D3D3D3;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">Index</a>
+      <a href="/ninja_village">Ninja village</a>
+      <a href="/logout">logout</a>
+    </header>
+    <section>
+      <h2>Hello, {{ user.alias }}!</h2>
+      {% if my_friends.count == 0 %}
+        <h3>You have no firends yet.</h3>
+      {% else %}
+        <h3>Here is the list of your firends:</h3>
+      {% endif %}
+      <table>
+        <tr>
+          <th>Alias</th>
+          <th>Action</th>
+        </tr>
+        {% for friend in my_friends %}
+        <tr>
+          <td>{{ friend.alias }}</td>
+          <td><a href="/user/{{friend.id}}">view Profile</a> | <a href="remove/{{friend.id}}">Remove as Friend</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <h3>Other Users not on your friend's list:</h3>
+      <table>
+        <tr>
+          <th>Alias</th>
+          <th>Action</th>
+        </tr>
+        {% for other in others %}
+        <tr>
+          <td><a href="/user/{{other.id}}">{{ other.alias }}</a></td>
+          <td><a href="add/{{ other.id }}">Add as Friend</a></td>
+          <td><a href="#">Poke</a>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<section>
+      <a [routerLink]="['/play']">Play!</a>
+      <p>Click the button above to start the trivia game</p>
+</section>
+<section>
+   <form class="" action="index.html" method="post">
+      <label for="">Search</label>
+      <input type="text" name="searchbar">
+   </form>
+
+   <table>
+      <tr>
+         <th>Name</th>
+         <th>Score</th>
+         <th>Percentage</th>
+      </tr>
+      <tr *ngFor="let user of users">
+         <td>{{ user.username }}</td>
+         <td>{{ user.score }} / 3</td>
+         <td>{{ user.score / 3 * 100}}%</td>
+   </table>
+</section>

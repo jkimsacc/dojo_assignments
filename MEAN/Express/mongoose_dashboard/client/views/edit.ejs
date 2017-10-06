@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit page</title>
+    <style media="screen">
+      section{width: 500px; margin: auto;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2><%= dog.name %> Edit Page!</h2>
+      <form class="" action= <%= "/dogs/edit/"+dog.id %> method="post">
+        <h3>Name: <input type="text" name="name" value=""></h3>
+        <h3>Characteristics: <input type="text" name="characteristics" value=""></h3>
+        <h3><input type="submit" name="" value="Edit"></h3>
+      </form>
+    </section>
+  </body>
+</html>

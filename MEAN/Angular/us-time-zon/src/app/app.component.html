@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+   Welcome to {{title}}!
+</h1>
+<div class="">
+   <button (click)="setTimezone('pct')" [ngClass]="{last : lastClicked === 'pct'}" type="button" name="button">PST</button>
+   <button (click)="setTimezone('mst')" [ngClass]="{last : lastClicked === 'mst'}" type="button" name="button">MST</button>
+   <button (click)="setTimezone('cst')" [ngClass]="{last : lastClicked === 'cst'}" type="button" name="button">CST</button>
+   <button (click)="setTimezone('est')" [ngClass]="{last : lastClicked === 'est'}" type="button" name="button">EST</button>
+   <button (click)="setTimezone('clear')" [ngClass]="{last : lastClicked === 'clear'}" type="button" name="button">Clear</button>
+</div>
+
+
+{{ now | date: 'medium' }}

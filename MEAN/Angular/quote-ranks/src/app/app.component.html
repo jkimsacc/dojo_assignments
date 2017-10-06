@@ -1,0 +1,6 @@
+<header>
+   <app-add (myEvent)="pushQuote($event)"></app-add>
+</header>
+<section>
+   <app-list [quoteList]='quotes' (vote)="upVote($event)" (down)="downVote($event)" (del)="delete($event)"></app-list>
+</section>

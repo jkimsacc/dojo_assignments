@@ -1,0 +1,18 @@
+<h2>New Question</h2>
+<form (submit)=addQuestion()>
+   <label for="">Question</label>
+   <textarea name="name" rows="8" cols="80"
+   [(ngModel)]="newQuestion.question"></textarea><br>
+   <label for="">Correct Answer</label>
+   <input type="text" name="answer" value="" class="input"
+   [(ngModel)]="newQuestion.answer"><br>
+   <label for="">Fake Answer 1</label>
+   <input type="text" name="fake_answer1" value="" class="input"
+   [(ngModel)]="newQuestion.fake_answer1"><br>
+   <label for="">Fake Answer 2</label>
+   <input type="text" name="fake_aswer2" value="" class="input"
+   [(ngModel)]="newQuestion.fake_answer2"><br>
+   <a [routerLink]= "['/']" class="fake_submit">Cancel</a>
+   <input type="submit" name="add" value="Add Question">
+</form>
+{{ newQuestion | json }}

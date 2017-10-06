@@ -1,0 +1,12 @@
+note
+
+1. build small;
+  never assume something is happening, test small things;
+2. build it, link it, test it;
+3. test it
+  line by line
+4. write down errors
+5. know your definitions
+6. practice algorithms (1 extra hr a day)
+  insert, delete, find, reverse
+7. if you can teach it, you can do it

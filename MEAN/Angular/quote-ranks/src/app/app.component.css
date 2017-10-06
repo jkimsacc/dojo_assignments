@@ -1,0 +1,20 @@
+body{
+   display: grid;
+   grid-template-columns: repeat(10, 1fr);
+   grid-gap: 10px;
+   grid-auto-rows: minmax(50px;, auto);
+}
+header{
+   background-color: #99c0ff;
+   grid-column: 3;
+   grid-row: 1;
+}
+section{
+   background-color: #e8b0b0;
+   grid-column: 3 / 10;
+   grid-row: 3;
+}
+*{
+   padding: 2%;
+   margin: 2%;
+}

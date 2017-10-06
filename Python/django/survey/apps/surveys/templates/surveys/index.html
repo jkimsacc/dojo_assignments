@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>surveys</title>
+  </head>
+  <body>
+    <form class="surveys" action="/results/" method="POST">
+      {% csrf_token %}
+      Your name:
+        <input type="text" name="name" value=""><br>
+      Dojo Location:
+        <select class="location" name="location">
+          <option value="Seattle, WA">Seattle, WA</option>
+          <option value="Mountain View, CA">Seattle, WA</option>
+          <option value="Los Angeles, CA">Los Angeles, CA</option>
+          <option value="Dallas, TX">Dallas, TX</option>
+          <option value="McLean, VA">McLean, VA</option>
+          <option value="Chicago, IL">Chicago, IL</option>
+          <option value="Tulsa, OK">Tulsa, OK</option>
+        </select><br>
+      Favorite Stack:
+        <select class="stack" name="stack">
+          <option value="Web Fund">Web Fund</option>
+          <option value="Python">Python</option>
+          <option value="MEAN">MEAN</option>
+          <option value="C++">C++</option>
+          <option value="ios">ios</option>
+      </select><br>
+      Comment (optional): <br>
+        <textarea name="comment" rows="8" cols="80"></textarea>
+      <input type="submit" name="submit" value="submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<div *ngFor='let quote of quoteList' class="wrapper">
+   <div class="text">
+      <h3>{{ quote.text }}</h3>
+      <h5>{{ quote.author }}</h5>
+   </div>
+   <div class="like">
+      <h2>{{ quote.like }}</h2>
+   </div>
+   <div class="button">
+      <button type="button" name="" (click)= 'upVote(quote)' >Vote Up</button>
+      <button type="button" name="" (click)= 'downVote(quote)'>Vote Down</button>
+      <button type="button" name="" (click)= 'delete(quote)'>Delete</button>
+   </div>
+</div>

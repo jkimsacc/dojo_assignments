@@ -1,0 +1,8 @@
+/Users/joseph/Desktop/C#/deckofcards/bin/Debug/netcoreapp1.1/deckofcards.deps.json
+/Users/joseph/Desktop/C#/deckofcards/bin/Debug/netcoreapp1.1/deckofcards.runtimeconfig.json
+/Users/joseph/Desktop/C#/deckofcards/bin/Debug/netcoreapp1.1/deckofcards.runtimeconfig.dev.json
+/Users/joseph/Desktop/C#/deckofcards/obj/Debug/netcoreapp1.1/deckofcards.AssemblyInfo.cs
+/Users/joseph/Desktop/C#/deckofcards/bin/Debug/netcoreapp1.1/deckofcards.dll
+/Users/joseph/Desktop/C#/deckofcards/bin/Debug/netcoreapp1.1/deckofcards.pdb
+/Users/joseph/Desktop/C#/deckofcards/obj/Debug/netcoreapp1.1/deckofcards.dll
+/Users/joseph/Desktop/C#/deckofcards/obj/Debug/netcoreapp1.1/deckofcards.pdb

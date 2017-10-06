@@ -1,0 +1,42 @@
+section {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 10px;
+   grid-auto-rows: minmax(100px, auto);
+}
+
+div.human{
+   background-color: #ffffcc;
+   grid-column: 1;
+   grid-row: 1;
+}
+
+div.saiyan{
+   background-color: #ffffcc;
+   grid-column: 2;
+   grid-row: 1;
+}
+
+div.saiyan1{
+   background-color: #ffffcc;
+   grid-column: 3;
+   grid-row: 1;
+}
+
+div.saiyan2{
+   background-color: #ffffcc;
+   grid-column: 1;
+   grid-row: 2;
+}
+
+div.saiyan3{
+   background-color: #ffffcc;
+   grid-column: 2;
+   grid-row: 2;
+}
+
+div.saiyan4{
+   background-color: #ffffcc;
+   grid-column: 3;
+   grid-row: 2;
+}

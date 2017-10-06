@@ -1,0 +1,41 @@
+<body>
+   <header>
+      <h2>Dev Routes</h2>
+      <a [routerLink]='["dashboard"]'>Dashboard</a>
+   </header>
+   <button (click)="loginPage()">Login</button>
+   <button (click)="registerPage()">Register</button>
+   <section *ngIf ="login_page">
+      <h2>Login</h2>
+      <form (submit)="login()" #loginData="ngForm">
+         <input type="text" name="email" placeholder="Email"
+         [(ngModel)]="newUser.email" #email="ngModel"
+         required>
+         <input type="password" name="password" placeholder="Password"
+         [(ngModel)]="newUser.password" #password="ngModel"
+         required>
+         <input type="submit" name="login" value="Login"
+         [disabled]="loginData.invalid">
+      </form>
+
+
+   </section>
+   <section *ngIf = "!login_page">
+      <h2>Register</h2>
+      <form (submit)='register()' #registerData="ngForm">
+         <input type="text" name="email" placeholder="Email"
+         [(ngModel)]="newUser.email" #email="ngModel"
+         required>
+         <input type="password" name="password" placeholder="Password"
+         [(ngModel)]="newUser.password" #password="ngModel"
+         required>
+         <input type="password" name="confirm_password" placeholder="Confirm Password"
+         [(ngModel)]="newUser.confirm_password" #confirm="ngModel">
+         <input type="submit" name="register" value="Register"
+         [disabled]='registerData.invalid || newUser.password != newUser.confirm_password'>
+      </form>
+   </section>
+{{ newUser | json }}
+{{ newUser.valid | json }}
+{{ newUser.password == newUser.confirm_password | json }}
+</body>

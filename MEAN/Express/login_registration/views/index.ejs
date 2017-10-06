@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Login Registration</title>
+      <style media="screen">
+         body { padding: 2%;}
+         div {display: inline-block; width: 45%; vertical-align: top; }
+         span {color: red;}
+      </style>
+   </head>
+   <body>
+      <div class="login">
+         <h2>Login</h2>
+         <span><%= loginMessage %></span>
+         <form class="" action="/session" method="post">
+            <h3>email: <input type="text" name="email" value=""></h3>
+            <h3>password: <input type="password" name="password" value=""></h3>
+            <h3><input type="submit" name="" value="login"></h3>
+         </form>
+      </div>
+      <div class="registration">
+         <h2>Register</h2>
+         <span><%= registrationSuccess %></span>
+         <form class="" action="/register" method="post">
+            <h3>email: <input type="text" name="email" value=""></h3>
+            <% if(registrationErrors && registrationErrors.errors.email) { %>
+               <%= registrationErrors.errors.first_name.message %>
+            <% }%>
+            <h3>First name: <input type="text" name="first_name" value=""></h3>
+            <% if(registrationErrors && registrationErrors.errors.first_name) { %>
+               <%= registrationErrors.errors.first_name.message %>
+            <% }%>
+            <h3>Last name: <input type="text" name="last_name" value=""></h3>
+            <% if(registrationErrors && registrationErrors.errors.last_name) { %>
+               <%= registrationErrors.errors.first_name.message %>
+            <% }%>
+            <h3>password: <input type="password" name="password" value=""></h3>
+            <% if(registrationErrors && registrationErrors.errors.password) { %>
+               <%= registrationErrors.errors.first_name.message %>
+            <% }%>
+            <h3>confirm password: <input type="password" name="confirm_pw" value=""></h3>
+            <h3>birthday : <input type="date" name="birthday" value=""></h3>
+            <h3><input type="submit" name="" value="register"></h3>
+         </form>
+      </div>
+      <section>
+      </section>
+   </body>
+</html>

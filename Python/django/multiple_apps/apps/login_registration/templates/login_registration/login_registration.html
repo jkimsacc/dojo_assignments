@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login / Registration</title>
+    <style media="screen">
+    * {padding: 1%;}
+    body {background-color: black;}
+    section {background-color: white;}
+    div {vertical-align: top; display: inline-block; width: 45%; margin: auto;}
+    input {display: block;}
+    p.error {color: red;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="">
+        <h2>Login</h2>
+        <form class="" action="login" method="post">
+          {% csrf_token %}
+          <h3>E-mail</h3>
+          <input type="text" name="email" value="">
+          <h3>Password</h3>
+          <input type="password" name="password" value="">
+          <input type="submit" name="" value="login">
+        </form>
+        {% if messages %}
+          {% for error in messages %}
+            <p class="error">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="">
+        <h2>Register</h2>
+        <form class="" action="register" method="post">
+          {% csrf_token %}
+          <h3>E-mail</h3>
+          <input type="text" name="email" value="">
+          <h3>Confirm E-mail</h3>
+          <input type="text" name="confirm_email" value="">
+          <h3>First Name</h3>
+          <input type="text" name="first_name" value="">
+          <h3>Last Name</h3>
+          <input type="text" name="last_name" value="">
+          <h3>Username</h3>
+          <input type="text" name="username" value="">
+          <h3>Birthday</h3>
+          <input type="date" name="birthday" value="">
+          <h3>Password</h3>
+          <input type="password" name="password" value="">
+          <h3>Confirm Password</h3>
+          <input type="password" name="confirm_password" value="">
+          <input type="submit" name="" value="submit">
+        </form>
+      </div>
+
+    </section>
+  </body>
+</html>

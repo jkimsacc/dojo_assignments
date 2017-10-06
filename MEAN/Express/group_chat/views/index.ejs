@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Group Chatroom</title>
+    <style media="screen">
+      input {display: block;}
+      #message {width:100%;}
+      input.submit {display: inline-block;}
+      div {border-style: solid; border-width: 1px; padding: 10px;}
+      #chat_box {height: 700px;}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+      $(document).ready(function (){
+        var socket = io.connect();
+        var current_user;
+        var new_user = function(){
+          var name = prompt("Please enter your name to chat");
+          socket.emit("page_load", {user: name});
+          }
+        new_user();
+
+        socket.on("existing_user", function(data){
+          $('#error_box').html(data.error)
+          new_user();
+        })
+
+        socket.on("load_messages", function(data){
+          $('#error_box').html("")
+          current_user = data.current_user;
+          var messages = data.messages;
+          var error_message = "Entered as" + JSON.stringify(current_user);
+          var messages_thread = "";
+          for (let i = 0; i < messages.length; i++){
+            messages_thread += "<p>" + messages[i].name + ':' + messages[i].message + "</p>";
+          }
+          $('#error_box').append(error_message);
+          $('#chat_box').append(messages_thread);
+        })
+        $('#new_message').submit(function(){
+          socket.emit("new_message", {message: $('#message').val(), user: current_user})
+          return false;
+        })
+        socket.on('user_enter', function(data){
+          $('#chat_box').append("<p>" + data.current_user + " entered the room</p>");
+        })
+        socket.on("post_new_message", function(data){
+          $('#chat_box').append("<p>"+data.user+": " + data.new_message + "</p>");
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div id="error_box"></div>
+    <section>
+      <div id="chat_box">
+
+      </div>
+      <form id="new_message" action="" method="post" onsubmit="return false">
+        <input type="text" id="message" placeholder="enter message">
+        <input type="submit" value="Send">
+
+      </form>
+    </section>
+
+
+  </body>
+</html>

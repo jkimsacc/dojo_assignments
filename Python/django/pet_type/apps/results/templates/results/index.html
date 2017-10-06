@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add page</title>
+  </head>
+  <body>
+    <section>
+      <form class="" action="/process" method="post">
+        {% csrf_token %}
+        <p>your pet type</p>
+        <select class="" name="type">
+          <option value="">Select</option>
+          {% for option in options %}
+          <option value="{{ option }}">{{ option.name }}</option>
+          {% endfor %}
+        </select>
+        <p>...or add a new type</p>
+        <input type="text" name="add_type" value="">
+        <input type="submit" name="" value="Submit">
+      </form>
+      {% if message %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    </section>
+  </body>
+</html>

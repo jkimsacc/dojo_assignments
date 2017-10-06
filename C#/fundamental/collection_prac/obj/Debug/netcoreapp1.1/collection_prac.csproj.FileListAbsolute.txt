@@ -1,0 +1,8 @@
+/Users/joseph/Desktop/C#/collection_prac/bin/Debug/netcoreapp1.1/collection_prac.deps.json
+/Users/joseph/Desktop/C#/collection_prac/bin/Debug/netcoreapp1.1/collection_prac.runtimeconfig.json
+/Users/joseph/Desktop/C#/collection_prac/bin/Debug/netcoreapp1.1/collection_prac.runtimeconfig.dev.json
+/Users/joseph/Desktop/C#/collection_prac/bin/Debug/netcoreapp1.1/collection_prac.dll
+/Users/joseph/Desktop/C#/collection_prac/bin/Debug/netcoreapp1.1/collection_prac.pdb
+/Users/joseph/Desktop/C#/collection_prac/obj/Debug/netcoreapp1.1/collection_prac.AssemblyInfo.cs
+/Users/joseph/Desktop/C#/collection_prac/obj/Debug/netcoreapp1.1/collection_prac.dll
+/Users/joseph/Desktop/C#/collection_prac/obj/Debug/netcoreapp1.1/collection_prac.pdb

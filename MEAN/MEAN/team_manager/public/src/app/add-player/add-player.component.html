@@ -1,0 +1,12 @@
+<router-outlet></router-outlet>
+<form (submit)="addPlayer()">
+   <h2>Add Player</h2>
+   <p><label>Player Name:</label>
+   <input class="text" type="text" name="name" [(ngModel)]="newPlayer.name"></p>
+   <p><label>Preferred Position:</label>
+   <input class="text" type="text" name="position" [(ngModel)]="newPlayer.position"></p>
+   <input type="submit" name="submit" value="ADD">
+
+</form>
+{{ players | json }}
+{{ newPlayer | json }}

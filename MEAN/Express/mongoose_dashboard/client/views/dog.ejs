@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Dog page!!</h2>
+    <h3>Name: <%= dog.name %></h3>
+    <h3>Created at: <%= dog.createdAt %></h3>
+    <% if (dog.characteristics) { %>
+      <h3>Characteristics: <%= dog.characteristics %></h3>
+    <% } %>
+    <a href= <%= "/dogs/edit/" + dog.id %> >Edit</a>
+    <a href=<%= "/dogs/destroy/" + dog.id %>> Destroy</a>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+body{
+   background-color: white;
+}
+
+section{
+   display: inline-block;
+   vertical-align: top;
+}
+
+input{
+   display: block;
+}

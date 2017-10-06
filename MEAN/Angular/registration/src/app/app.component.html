@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <h1>
+    {{title}}!
+  </h1>
+  <h2>Account Information</h2>
+
+</header>
+<form (submit)='register()'>
+<table>
+   <tr>
+      <td><h4 >*First Name: </h4></td>
+      <td><h4><input type="text" name="first_name" required minlength='2'
+         maxlength='24'[(ngModel)]='user.first_name' #first_name='ngModel'> {{ first_name.errors | json }}{{ first_name.valid | json }}</h4>
+         <div *ngIf="first_name.errors">Wrong!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*Last Name: </h4></td>
+      <td><h4><input type="text" name="last_name" required minlength='2'
+         maxlength='24' [(ngModel)]='user.last_name' #last_name='ngModel'></h4>
+         <div *ngIf="last_name.errors">Wrong!!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*Email: </h4></td>
+      <td><h4><input type="text" name="email" required
+         [(ngModel)]='user.email' #email='ngModel'></h4>
+      <div *ngIf="email.errors">Wrong!!!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*Password: </h4></td>
+      <td><h4><input type="password" name="password" required
+         minlength = '8' maxlength='32' [(ngModel)]='user.password' #password='ngModel'></h4>
+      <div *ngIf="password.errors">Not Long Enough!!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*Password Conform: </h4></td>
+      <td><h4><input type="password" name="confirm_password" required [(ngModel)]='user.confirm_password' #confirm_password='ngModel'
+         ></h4>
+      <div *ngIf="password != confirm_password">password does not match!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*Street Address: </h4></td>
+      <td><h4><input type="text" name="address_st" required [(ngModel)]='user.address_st' #address_st='ngModel'></h4>
+      <div *ngIf="address_st.errors">Address required!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >Unit/Apt #: </h4></td>
+      <td><h4><input type="text" name="address_unit"></h4></td>
+   </tr>
+   <tr>
+      <td><h4 >*City: </h4></td>
+      <td><h4><input type="text" name="city" required [(ngModel)]='user.city' #city='ngModel'></h4>
+      <div *ngIf="city.errors">City required!</div></td>
+   </tr>
+   <tr>
+      <td><h4 >*State: </h4></td>
+      <td><h4><select class="" name="state" required><option *ngFor= 'let state of states' value="state">{{ state }}</option>
+   </select></h4></td>
+   </tr>
+   <tr>
+      <td><h4 >*I'm feeling lucky: </h4></td>
+      <td><h4><input type= "radio" name="feeling" >Yes<input type="radio" name="lucky" value="No">No</h4></td>
+   </tr>
+</table>
+<input type="submit" >
+</form>

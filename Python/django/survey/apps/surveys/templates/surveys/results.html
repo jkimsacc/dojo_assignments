@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>results</title>
+  </head>
+  <body>
+    You have submitted {{ request.session.counter }} times<br> 
+    Name: {{ request.session.name }} <br>
+    Location: {{ request.session.location }} <br>
+    Favorite Stack: {{ request.session.stack }} <br>
+    Comment: <br>
+    {{ request.session.comment }} <br>
+
+  </body>
+</html>

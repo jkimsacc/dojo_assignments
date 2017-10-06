@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function starString(num){
+        var string = '';
+        for (let i = 0; i < num; i++){
+          string += '*';
+        }
+        return string;
+      }
+
+      function drawStars(array){
+        for (i = 0; i < array.length; i++){
+          if (array[i].constructor === Number){
+            console.log(starString(array[i]));
+          }
+          if (array[i].constructor === String){
+            var string = '';
+            for (let j = 0; j < array[i].length; j++){
+              string += array[i][0].toLowerCase();
+            }
+            console.log(string);
+          }
+        }
+      }
+
+      let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];
+      drawStars(x);
+    </script>
+  </body>
+</html>

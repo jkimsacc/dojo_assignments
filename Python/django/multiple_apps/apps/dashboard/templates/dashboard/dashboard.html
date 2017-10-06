@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <style media="screen">
+    * {padding: 1%; margin: 1%;}
+    body {background-color: black;}
+    header {background-color: white;}
+    section {background-color: white; Height:1000px;}
+    div {vertical-align: top; display: inline-block; border-style: solid; border-width: 1px; width: 45%;}
+    input {display: block;}
+    table {border-collapse: collapse;}
+    table, th, td{border: 1px solid black;}
+    th, td {width: 100px;}
+    </style>
+  </head>
+  <body>
+    <header>
+      {% if logged_in == True %}
+      <a href="/logout">logout</a>
+      {% else %}
+      <a href="/login_registration">login</a>
+      {% endif %}
+    </header>
+    <section>
+      <table>
+        <tr>
+          <th><h3>Username</h3></th>
+          <th><h3>Name</h3></th>
+          <th><h3>Birthday</h3></th>
+          <th><h3>Action</h3></th>
+        </tr>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.username }}</td>
+          <td>{{ user.first_name }} {{user.last_name }}</td>
+          <td>{{ user.birthday.month }}.{{ user.birthday.day }} </td>
+          <td><a href="#">like</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
+  </body>
+</html>

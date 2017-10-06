@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EPPPIICICICICIICICC BUTTON</title>
+    <style media="screen">
+      button{color: white; border-radius: 5px; width: 500px; height: 70px; font-size: 50px;}
+      button.blue{background-color: blue;}
+      button.red {background-color:red;}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+      $(document).ready(function (){
+        var socket = io.connect();
+        $('#epic_button').click(function(){
+          socket.emit('add_number');
+          socket.on('update_number', function(data){
+            $('span').html(data.num)
+          })
+        });
+        $('#reset_button').click(function(){
+          socket.emit('reset_number');
+          socket.on('update_number', function(data){
+            $('span').html(data.num)
+          })
+        })
+      });
+
+
+    </script>
+
+  </head>
+  <body>
+    <div class="">
+      <h2>The button has been pushed <span></span> time(s)</h2>
+      <p>Push the button to update the count!</p>
+      <button type="button" name="button" class="blue" id='epic_button'>Push the epic button</button>
+      <button type="button" name="button" class="red" id='reset_button'>Push to reset</button>
+    </div>
+  </body>
+</html>

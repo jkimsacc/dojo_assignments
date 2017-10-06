@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var _ = {
+      map: function(arr, callback) {
+        var new_array = [];
+        for (let i = 0; i < arr.length; i++){
+          new_array.push(callback(arr[i]));
+        }
+        return new_array;
+      },
+      reduce: function(arr, callback) {
+        for (var i = arr.length-2; i >= 0; i--){
+          arr[i] = callback(arr[i], arr[i + 1]);
+          arr.length--;
+        }
+        return arr[0];
+      },
+      find: function(arr, callback) {
+        for (let i = 0; i <arr.length; i++){
+          if (callback(arr[i]) == true){
+            return arr[i];
+          }
+        }
+      },
+      filter: function(arr, callback) {
+        var new_array = [];
+        for (let i = 0; i < arr.length; i++){
+          if (callback(arr[i]) == true){
+            new_array.push(arr[i]);
+          }
+        }
+        return new_array;
+      },
+      reject: function(arr, callback) {
+        var new_array = [];
+        for (let i = 0; i < arr.length; i++){
+          if (callback(arr[i]) == false){
+            new_array.push(arr[i]);
+          }
+        }
+        return new_array;
+      }
+    }
+    var double = _.map([1, 2, 3, 4, 5, 6], function(num){ return num * 2 });
+    var sum = _.reduce([1, 2, 3, 4, 5, 6], function(memo, num){ return memo + num; });
+    var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+    var no_evens = _.reject([1,2,3,4,5,6], function(num){ return num % 2 == 0; });
+    console.log(double);
+    console.log(sum);
+    console.log(evens); // if things are working right, this will return [2,4,6].
+    console.log(no_evens);
+    </script>
+  </body>
+</html>

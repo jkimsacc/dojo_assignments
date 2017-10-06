@@ -1,0 +1,21 @@
+<body>
+   <button (click) = "loginTab()">Login</button><button (click) = "registerTab()">Register</button>
+   <section *ngIf='login_tab'>
+      <h3>Login Page</h3>
+      <input type="text" name="" placeholder="Email">
+      <input type="password" name="" placeholder="password">
+      <input type="submit" name="" value="Login">
+   </section>
+   <section *ngIf='!login_tab'>
+      <h3>Register Page</h3>
+      <input type="text" name="" placeholder="Email">
+      <input type="password" name="" placeholder="password">
+      <input type="password" placeholder="confirm Password">
+      <input type="submit" name="" value="Register">
+
+   </section>
+   <section>
+      <h3>Dev links</h3>
+      <a [routerLink]="['create']">Create Page</a>
+   </section>
+</body>

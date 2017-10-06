@@ -1,0 +1,21 @@
+form{
+   display: grid;
+   grid-template-columns: repeat(10, 1fr);
+   grid-gap: 1%;
+   grid-auto-rows: minmax(auto, auto);
+}
+textarea{
+   grid-column: 3 / 7;
+   grid-row: 1;
+}
+div.author{
+   grid-column: 3 / 7;
+   grid-row: 2;
+}
+input.submit{
+   grid-column: 6;
+   grid-row: 3;
+}
+h2{
+   display: inline-block;
+}

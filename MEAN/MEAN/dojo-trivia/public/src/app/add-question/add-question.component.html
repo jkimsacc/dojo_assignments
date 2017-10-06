@@ -1,0 +1,17 @@
+<h2>New Question</h2>
+<form (submit)="addQuestion()" #form="ngForm">
+   <label for="">Question</label>
+   <textarea name="name" rows="8" cols="80"
+   required [(ngModel)]="newQuestion.question"></textarea><br>
+   <label for="">Correct Answer</label>
+   <input type="text" name="answer" value="" class="input"
+   required [(ngModel)]="newQuestion.answer"><br>
+   <label for="">Fake Answer 1</label>
+   <input type="text" name="fake_answer1" value="" class="input"
+   required [(ngModel)]="newQuestion.fake_answer1"><br>
+   <label for="">Fake Answer 2</label>
+   <input type="text" name="fake_aswer2" value="" class="input"
+   required [(ngModel)]="newQuestion.fake_answer2"><br>
+   <button type="button" name="cancel" (click)='cancel()'>Cancel</button>
+   <input type="submit" name="add" value="Add Question" [disabled]="form.invalid">
+</form>

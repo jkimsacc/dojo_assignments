@@ -1,0 +1,8 @@
+/Users/joseph/Desktop/C#/crud_sql/bin/Debug/netcoreapp1.1/crud_sql.deps.json
+/Users/joseph/Desktop/C#/crud_sql/bin/Debug/netcoreapp1.1/crud_sql.runtimeconfig.json
+/Users/joseph/Desktop/C#/crud_sql/bin/Debug/netcoreapp1.1/crud_sql.runtimeconfig.dev.json
+/Users/joseph/Desktop/C#/crud_sql/bin/Debug/netcoreapp1.1/crud_sql.dll
+/Users/joseph/Desktop/C#/crud_sql/bin/Debug/netcoreapp1.1/crud_sql.pdb
+/Users/joseph/Desktop/C#/crud_sql/obj/Debug/netcoreapp1.1/crud_sql.AssemblyInfo.cs
+/Users/joseph/Desktop/C#/crud_sql/obj/Debug/netcoreapp1.1/crud_sql.dll
+/Users/joseph/Desktop/C#/crud_sql/obj/Debug/netcoreapp1.1/crud_sql.pdb

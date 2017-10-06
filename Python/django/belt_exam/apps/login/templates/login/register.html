@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register Page</title>
+    <style media="">
+      body {background-color: #3284BF; padding: 5%}
+      div {background-color: white; width: 400px; padding:5%; margin: auto; border-radius:10px;}
+      p.red{color:red}
+    </style>
+  </head>
+  <body>
+    <form class="" action="/process" method="post">
+      {% csrf_token %}
+
+      <div>
+        <h2>Register</h2>
+        <p>First Name</p>
+        <input type="text" name="f_name" value="">
+        <p>Last Name</p>
+        <input type="text" name="l_name" value="">
+        <p>E-mail</p>
+        <input type="text" name="email" value="">
+        <p>Password</p>
+        <input type="password" name="password" value="">
+        <p>Confirm Password</p>
+        <input type="password" name="confirm_pw" value="">
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
+        <br><br>
+        {% if messages %}
+          {% for error in messages %}
+            <p class="red">{{ error }}</p>
+          {% endfor%}
+        {% endif %}
+      </div>
+
+
+    </form>
+  </body>
+</html>

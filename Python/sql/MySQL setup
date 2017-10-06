@@ -1,0 +1,5 @@
+USE movies;
+SELECT * FROM movies;
+INSERT INTO movies (title, director, genre, created_at, updated_at) VALUES ('PULP FICTION', 'Tarantino', NOW(), NOW());
+DELETE FROM movies WHERE id = 1;
+UPDATE movies SET director = 'Tarantino' WHERE id = 2;

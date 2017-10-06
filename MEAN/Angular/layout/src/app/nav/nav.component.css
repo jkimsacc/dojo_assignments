@@ -1,0 +1,6 @@
+section.nav{
+   display: grid;
+   grid-column: 1;
+   grid-row: 2 / 5;
+   background-color: #80ffe5;
+}

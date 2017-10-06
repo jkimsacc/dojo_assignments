@@ -1,0 +1,77 @@
+1. start django env
+
+2. create project
+django-admin startproject 'name of your_project'
+# be careful not to overwrite built in word
+
+3. cd ' project'
+# go inside the project
+manage.py #entry to our file
+
+4. mkdir apps
+
+5. cd apps
+
+6. touch __init__.py
+#create init file, treat as class
+
+7. django-admin startapp 'app name_app'
+#use _ to avoid name space issue
+
+8. cd 'app name_app'
+
+9. touch urls.py
+#create urls file
+
+10. mkdir templates
+#make templates folder as same level
+
+11. cd templates
+
+12. mkdir home_app
+
+13. cd home_app
+
+14. touch index.html
+
+15. go top level, start text editor
+
+
+16. in settings.py, add following
+installed apps
+'apps.home_app',
+
+
+17. run server
+python manage.py runserver
+
+18. open urls.py in project dir
+copy line 20, paste
+url(r'^', test) # if any url comes in , run test() function
+
+build def test(request): function
+
+19. settings.py
+add import url, include
+
+20. in urls files
+
+
+^ : indicates beginning of the str
+$ : indicates the end of the str
+
+^$ : nothing
+
+21. link it
+in urls.py
+url(r'^', include('apps.home_app.urls'))
+
+21. views
+
+in urls.py (home.app)
+add from . import views
+
+urls.py
+
+def test(request):
+  return render(request, 'home_app/index.html')

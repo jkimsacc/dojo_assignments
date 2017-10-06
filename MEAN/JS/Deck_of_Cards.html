@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Deck of Cards</title>
+    <script type="text/javascript">
+      class Deck{
+        constructor(cards){
+          this.cards = [];
+        }
+
+        reset(){
+          let numbers = ['A',2,3,4,5,6,7,8,9,10,"J","Q","K"];
+          let shapes = ['\u2660', '\u2665', '\u2666', '\u2663'];
+          this.cards = [];
+          for (let i = 0; i < shapes.length; i++){
+            for (let j = 0; j < numbers.length; j++){
+              let card = {
+                "shape" : shapes[i],
+                "number" : numbers[j],
+              }
+              this.cards.push(card);
+            }
+          }
+          return this;
+        }
+
+        shuffleDeck(){
+          for (let k = this.cards.length -1; k >= 0; k--){
+            let i = Math.floor(Math.random() * k);
+            let temp = this.cards[k];
+            this.cards[k] = this.cards[i];
+            this.cards[i] = temp;
+          }
+          return this.cards
+        }
+
+        dealCard(){
+          return this.cards.pop();
+        }
+      }
+
+      class Player{
+        constructor(name){
+          this.name = name;
+          this.hand = [];
+        }
+
+        takecard(deck){
+          this.hand.push(deck.dealCard());
+          return this;
+        }
+
+        discard(){
+          this.hand = [];
+          return this;
+        }
+      }
+
+      let deck1 = new Deck();
+      deck1.reset();
+      console.log(deck1);
+      console.log(deck1.shuffleDeck());
+      console.log(deck1.dealCard());
+
+      let player1 = new Player("Joseph");
+      player1.takecard(deck1).takecard(deck1);
+      console.log(player1);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
